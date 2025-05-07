@@ -145,6 +145,9 @@
       <plugin filename="libign_ros2_control-system.so" name="ign_ros2_control::IgnitionROS2ControlPlugin">
         <parameters>$(arg simulation_controllers)</parameters>
         <controller_manager_node_name>$(arg tf_prefix)controller_manager</controller_manager_node_name>
+        <ros>
+          <namespace>/$(arg name)</namespace> <!-- assuming that robot names are unique, assign the namespace by name -->
+        </ros>
       </plugin>
     </gazebo>
   </xacro:if>
